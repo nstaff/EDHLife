@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.staffend.nicholas.lifecounter.ChangeNameDialogFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name_change_desc"
+        android:layout_margin="@dimen/text_margin"/>
+
+    <EditText
+        android:id="@+id/editTextDialogUserInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+
+        android:imeOptions="actionDone"
+        android:inputType="textCapWords">
+
+        <requestFocus />
+    </EditText>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/std_life_small_space"
+            android:layout_marginRight="@dimen/std_life_small_space"
+            android:text="OK"
+            android:id="@+id/btnOk"
+            android:background="#00ffffff" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:id="@+id/btnCancel"
+            android:layout_marginLeft="@dimen/std_life_small_space"
+            android:layout_marginRight="@dimen/std_life_small_space"
+            android:background="#00ffffff" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,141 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/std_life_bkg"
+    android:orientation="vertical"
+    tools:context="com.staffend.nicholas.lifecounter.EDHGameSetup"
+    style="@style/standardSmallLifeDecorator">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/baseTable">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/edh_set_num_players"
+                android:id="@+id/txvNumPlayersTitle"
+                android:textColor="@color/primary_light"
+                android:layout_marginTop="@dimen/std_life_small_space"
+                android:layout_marginLeft="@dimen/std_life_small_space"
+                android:layout_marginRight="@dimen/std_life_small_space"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spnNumPlayers"
+                android:background="#00ffffff"
+                android:layout_marginTop="@dimen/std_life_small_space"
+                android:layout_marginLeft="@dimen/std_life_small_space"
+                android:layout_marginRight="@dimen/std_life_small_space"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/edh_set_starting_life"
+                android:id="@+id/txvStartingLifeTitle"
+                android:textColor="@color/primary_light"
+                android:layout_marginTop="@dimen/std_life_small_space"
+                android:layout_marginLeft="@dimen/std_life_small_space"
+                android:layout_marginRight="@dimen/std_life_small_space"
+                />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="40"
+                android:ems="10"
+                android:id="@+id/etxStartingLife"
+                android:textColor="@color/primary_light"
+                android:layout_marginTop="@dimen/std_life_small_space"
+                android:layout_marginLeft="@dimen/std_life_small_space"
+                android:layout_marginRight="@dimen/std_life_small_space"
+                android:textAlignment="center"/>
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/edh_set_max_poison"
+                android:id="@+id/txvMaxPoisonTitle"
+                android:textColor="@color/primary_light"
+                android:layout_margin="@dimen/std_life_small_space"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="10"
+                android:ems="10"
+                android:id="@+id/etxMaxPoison"
+                android:textColor="@color/primary_light"
+                android:layout_margin="@dimen/std_life_small_space"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:layout_span="2"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/edh_set_link_cdr_dmg"
+                android:id="@+id/chbLinkDamage"
+                android:checked="true"
+                android:textColor="@color/primary_light"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:layout_span="2"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="@string/edh_set_auto_delete_dead"
+                android:id="@+id/chbAutoDeleteDead"
+                android:checked="true"
+                android:textColor="@color/primary_light"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgGameStartyStart"
+        android:src="@drawable/start_game"
+        android:layout_alignParentBottom="true"
+
+        android:paddingTop="@dimen/margin_large_space" />
+
+
+</LinearLayout>

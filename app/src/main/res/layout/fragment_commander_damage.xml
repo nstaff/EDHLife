@@ -1,0 +1,59 @@
+<LinearLayout
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="com.staffend.nicholas.lifecounter.lifetrackers.EDHPlayerCommanderDamageCounter">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/margin_table_row">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/txvCommanderName"
+            android:text="Derevi"
+            android:textAppearance="@style/commanderDamagePlayerHeader"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/txvCommanderDamage"
+            android:textAppearance="@style/commanderDamagePlayerHeader"
+            android:text="7"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/std_life_small_space"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="@dimen/margin_table_row">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ibtnIncrement"
+            android:src="@mipmap/ic_add_black" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ibtnDecrement"
+            android:src="@mipmap/ic_remove_black" />
+
+    </LinearLayout>
+
+</LinearLayout>

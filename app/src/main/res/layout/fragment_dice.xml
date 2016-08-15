@@ -1,0 +1,131 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.studios.keller.edhlife.util.DiceFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView3">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:text="@string/roller_select_num_sides"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:id="@+id/txvNumberSidesSpinner"
+                    android:layout_margin="@dimen/margin_table_row"
+                    style="@style/playerHeader"
+                    android:layout_gravity="center_vertical" />
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/spnNumberSides"
+                    android:layout_gravity="center_vertical" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:minWidth="40dp"
+                    android:id="@+id/ibtRollDice"
+                    android:src="@mipmap/ic_dice"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"/>
+            </TableRow>
+
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/roller_result_current"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:id="@+id/textView"
+                    android:layout_marginTop="@dimen/margin_large_space"
+                    android:layout_marginLeft="@dimen/margin_table_row"
+                    android:layout_marginRight="@dimen/margin_table_row"
+                    android:layout_marginBottom="@dimen/margin_table_row"
+                    android:textSize="@dimen/text_size_xlarge" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:id="@+id/txvResult"
+                    android:layout_marginLeft="@dimen/margin_table_row"
+                    android:layout_marginRight="@dimen/margin_table_row"
+                    android:layout_marginBottom="@dimen/margin_table_row"
+                    android:layout_marginTop="@dimen/margin_large_space" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/roller_result_previous"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:id="@+id/txvPrevResultTitle"
+                    android:layout_marginTop="@dimen/margin_large_space"
+                    android:layout_marginLeft="@dimen/margin_table_row"
+                    android:layout_marginRight="@dimen/margin_table_row"
+                    android:layout_marginBottom="@dimen/margin_table_row"
+                    android:textSize="@dimen/text_size_xlarge" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:id="@+id/txvPrevResult"
+                    android:layout_marginLeft="@dimen/margin_table_row"
+                    android:layout_marginRight="@dimen/margin_table_row"
+                    android:layout_marginBottom="@dimen/margin_table_row"
+                    android:layout_marginTop="@dimen/margin_large_space" />
+            </TableRow>
+
+        </TableLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

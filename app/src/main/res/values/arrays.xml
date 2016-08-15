@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="dice_array">
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+        <item>10</item>
+        <item>12</item>
+        <item>20</item>
+        <item>100</item>
+    </string-array>
+
+    <string-array name="num_players">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
+
+    <string-array name="app_theme_colors">
+        <item>@string/default_guild</item>
+        <item>@string/azorious</item>
+        <item>@string/dimir</item>
+        <item>@string/rakdos</item>
+        <item>@string/gruul</item>
+        <item>@string/selesnya</item>
+        <item>@string/orzhov</item>
+        <item>@string/izzet</item>
+        <item>@string/golgari</item>
+        <item>@string/boros</item>
+        <item>@string/simic</item>
+    </string-array>
+
+    <string-array name="app_theme_colors_values">
+        <item>@string/default_guild</item>
+        <item>@string/azorious</item>
+        <item>@string/dimir</item>
+        <item>@string/rakdos</item>
+        <item>@string/gruul</item>
+        <item>@string/selesnya</item>
+        <item>@string/orzhov</item>
+        <item>@string/izzet</item>
+        <item>@string/golgari</item>
+        <item>@string/boros</item>
+        <item>@string/simic</item>
+    </string-array>
+</resources>

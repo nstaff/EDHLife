@@ -1,0 +1,132 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    tools:context="com.studios.keller.edhlife.lifetrackers.StandardLifeActivityFragment"
+    android:id="@+id/a"
+   >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|top">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="41dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Player 1"
+            android:id="@+id/txvName"
+            android:layout_gravity="top"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="25dp"
+            android:textColor="@color/primary_light"
+            />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageSwitcher
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/imgLarge"
+
+                android:layout_alignTop="@+id/txvP1Life"
+                android:layout_toStartOf="@+id/txvP1Life"
+
+                android:layout_alignBottom="@+id/txvP1Life"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_heart" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20"
+                android:fontFamily="sans-serif-light"
+                android:id="@+id/txvLarge"
+                android:layout_marginRight="52dp"
+                android:layout_alignTop="@+id/btnp1plus1"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/std_life_small_space"
+                android:textAppearance="@style/standardLargeLifeDecorator" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:id="@+id/llSmall">
+
+
+            <ImageSwitcher
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:id="@+id/imgSmall"
+                android:layout_gravity="center"
+                android:nestedScrollingEnabled="false"
+
+                android:layout_margin="@dimen/std_life_small_space"
+                android:src="@mipmap/ic_poison" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/standardSmallLifeDecorator"
+                android:text="0"
+                android:id="@+id/txvSmall"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/std_life_small_space"
+
+                android:textIsSelectable="true" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/std_life_large_space"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="right|top">
+
+
+
+
+        <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onLifeButtonClick"
+                android:id="@+id/fabPlus"
+                style="@style/PlusButton"
+                app:fabSize="normal"
+                app:backgroundTint="@color/plusButton"
+                android:src="@drawable/ic_add_black_24dp"
+                android:focusable="false" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabSize="normal"
+                android:onClick="onLifeButtonClick"
+                app:backgroundTint="@color/minusButton"
+                android:id="@+id/fabMinus"
+                style="@style/MinusButton"
+                android:src="@drawable/ic_remove_black_24dp"
+                android:focusable="false" />
+
+    </LinearLayout>
+
+</FrameLayout>

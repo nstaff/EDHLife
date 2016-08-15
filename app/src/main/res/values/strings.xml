@@ -1,0 +1,118 @@
+<resources>
+    <string name="app_name">LifeCounter</string>
+    <string name="title_activity_main">EDH Life</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="nav_drawer_header">MtG Commander Life</string>
+    <string name="nav_drawer_flavor">Choose your life counter</string>
+
+
+    <!-- Strings related to dice roller -->
+    <string name="roller_select_num_sides">Select number of sides:</string>
+    <string name="roller_result_current">Current roll</string>
+    <string name="roller_result_previous">Previous roll</string>
+
+    <string name="name_change_desc">Enter the new name:</string>
+    <string name="name_change_title">Change Name</string>
+
+    <string name="fragment_param_1">param1</string>
+    <string name="fragment_param_2">param2</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_edh">EDH Life Counter</string>
+
+    <string name="link_commander_life">Link Commander Damage</string>
+    <string name="link_commander_life_summary">Select if changes in Commander damage should be
+        reflected in the life totals</string>
+    <string name="pref_cdr_dmg_linked">preferenceIsCommanderDamageLinked</string>
+    <string name="title_activity_standard">Life Counter</string>
+    <string name="action_bar_restart">Restart</string>
+
+    <!-- EDH Game Setup Settings Strings -->
+    <string name="edh_set_num_players">Number of Players</string>
+    <string name="edh_set_starting_life">Starting Life</string>
+    <string name="edh_set_max_poison">Maximum Poison</string>
+    <string name="edh_set_link_cdr_dmg">Link commander damage to life totals</string>
+    <string name="edh_set_auto_delete_dead">Automatically drop players from the game on death.</string>
+    <string name="title_activity_goldfish">Goldfish Mode</string>
+
+    <!-- Strings related to Goldfish Mode -->
+    <string name="gfsh_num_of_turns">Turn Number</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+
+
+    <string name="default_guild">Default</string>
+    <string name="azorious">Azorious</string>
+    <string name="dimir">Dimir</string>
+    <string name="rakdos">Rakdos</string>
+    <string name="gruul">Gruul</string>
+    <string name="selesnya">Selesnya</string>
+    <string name="orzhov">Orzhov</string>
+    <string name="izzet">Izzet</string>
+    <string name="golgari">Golgari</string>
+    <string name="boros">Boros</string>
+    <string name="simic">Simic</string>
+</resources>

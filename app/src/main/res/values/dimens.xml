@@ -1,0 +1,24 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Life Counter Dimentions -->
+    <dimen name="standard_life_counter_number_height">76dp</dimen>
+    <dimen name="life_total_margin">12dp</dimen>
+    <dimen name="margin_table_row">12dp</dimen>
+    <dimen name="margin_large_space">26dp</dimen>
+    <dimen name="text_size_xlarge">26dp</dimen>
+
+    <dimen name="std_life_small_space">15dp</dimen>
+    <dimen name="std_life_medium_space">40dp</dimen>
+    <dimen name="std_life_large_space">60dp</dimen>
+    <dimen name="std_life_small_text">24dp</dimen>
+    <dimen name="std_life_large_text">76sp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+</resources>

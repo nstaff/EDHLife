@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_edh" android:title="EDH"/>
+        <item android:id="@+id/nav_standard" android:title="Standard"/>
+        <item android:id="@+id/nav_goldfish" android:title="Goldfish"/>
+
+
+    </group>
+
+    <item android:title="Utilities">
+        <menu>
+
+            <item android:id="@+id/nav_settings" android:icon="@android:drawable/ic_menu_preferences"
+                android:title="Settings" />
+        </menu>
+    </item>
+
+</menu>

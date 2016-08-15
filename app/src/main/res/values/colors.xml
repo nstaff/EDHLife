@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="divider">#B6B6B6</color>
+    <color name="primary">#FF9800</color>
+    <color name="primary_dark">#F57C00</color>
+    <color name="primary_light">#FFE0B2</color>
+    <color name="accent">#607D8B</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#212121</color>
+
+    <color name="plusButton">#64dd17</color>
+    <color name="minusButton">#ef5350</color>
+
+    <color name="commanderDamageColor">#ef5034</color>
+
+    <!-- Selesnaya Guild Color Pallate -->
+    <color name="primary_seles">#4CAF50</color>
+    <color name="primary_dark_seles">#388E3C</color>
+    <color name="primary_light_seles">#C8E6C9</color>
+    <color name="accent_seles">#FFEB3B</color>
+
+    <color name="primary_azorious">#03a9f4</color>
+    <color name="primary_dark_azorious">#0288d1</color>
+    <color name="primary_light_azorious">#e1f5fe</color>
+    <color name="accent_azorious">#03A9F4</color>
+
+    <color name="primary_rakdos">#F44336</color>
+    <color name="primary_dark_rakdos">#D32F2F</color>
+    <color name="primary_light_rakdos">#FFCDD2</color>
+    <color name="accent_rakdos">#FF5722</color>
+
+    <color name="primary_dimir">#2b43fc</color>
+    <color name="primary_dark_dimir">#230078</color>
+    <color name="primary_light_dimir">#d1c4e9</color>
+    <color name="accent_dimir">#536DFE</color>
+
+    <color name="primary_gruul">#388E3C</color>
+    <color name="primary_dark_gruul">#D32F2F</color>
+    <color name="primary_light_gruul">#f8bbbb</color>
+    <color name="gruul_middle">#f57c00</color>
+    <color name="accent_gruul">#FFEB3B</color>
+
+    <color name="primary_orzhov">#313131</color>
+    <color name="primary_dark_orzhov">#111111</color>
+    <color name="primary_light_orzhov">#919191</color>
+    <color name="accent_orzhov">#f0f4c3</color>
+
+    <color name="primary_izzet">#2196F3</color>
+    <color name="primary_dark_izzet">#1976D2</color>
+    <color name="primary_light_izzet">#BBDEFB</color>
+    <color name="accent_izzet">#d50000</color>
+
+    <color name="primary_golgari">#388e3c</color>
+    <color name="primary_dark_golgari">#212121</color>
+    <color name="primary_light_golgari">#a5d6a7</color>
+    <color name="accent_golgari">#9ccc65</color>
+
+    <color name="primary_boros">#f44336</color>
+    <color name="primary_dark_boros">#D32f2f</color>
+    <color name="primary_light_boros">#fce4ec</color>
+    <color name="accent_boros">#e6ee9c</color>
+
+    <color name="primary_simic">#2e7d32</color>
+    <color name="primary_dark_simic">#00796B</color>
+    <color name="primary_light_simic">#B2DFDB</color>
+    <color name="accent_simic">#448AFF</color>
+</resources>

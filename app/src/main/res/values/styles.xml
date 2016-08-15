@@ -1,0 +1,152 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary_dark</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+
+    </style>
+
+    <style name="AppThemeSeles" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="colorPrimary">@color/primary_seles</item>
+        <item name="colorPrimaryDark">@color/primary_dark_seles</item>
+        <item name="colorAccent">@color/accent_seles</item>
+    </style>
+
+    <style name="AppThemeAzorious" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_azorious</item>
+        <item name="colorPrimaryDark">@color/primary_dark_azorious</item>
+        <item name="colorAccent">@color/accent_azorious</item>
+    </style>
+
+    <style name="AppThemeDimir" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_dark_dimir</item>
+        <item name="colorPrimaryDark">@color/primary_dimir</item>
+        <item name="colorAccent">@color/primary_light_dimir</item>
+    </style>
+
+    <style name="AppThemeRakdos" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_rakdos</item>
+        <item name="colorPrimaryDark">@color/primary_dark_rakdos</item>
+        <item name="colorAccent">@color/primary_light_rakdos</item>
+    </style>
+
+    <style name="AppThemeGruul" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_gruul</item>
+        <item name="colorPrimaryDark">@color/primary_dark_gruul</item>
+        <item name="colorAccent">@color/accent_gruul</item>
+    </style>
+
+    <style name="AppThemeOrzhov" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_orzhov</item>
+        <item name="colorPrimaryDark">@color/primary_dark_orzhov</item>
+        <item name="colorAccent">@color/accent_orzhov</item>
+    </style>
+
+    <style name="AppThemeIzzet" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_izzet</item>
+        <item name="colorPrimaryDark">@color/primary_dark_izzet</item>
+        <item name="colorAccent">@color/accent_izzet</item>
+    </style>
+
+    <style name="AppThemeGolgari" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_golgari</item>
+        <item name="colorPrimaryDark">@color/primary_dark_golgari</item>
+        <item name="colorAccent">@color/accent_golgari</item>
+    </style>
+
+    <style name="AppThemeSimic" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_simic</item>
+        <item name="colorPrimaryDark">@color/primary_dark_simic</item>
+        <item name="colorAccent">@color/accent_simic</item>
+    </style>
+
+    <style name="AppThemeBoros" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_boros</item>
+        <item name="colorPrimaryDark">@color/primary_boros</item>
+        <item name="colorAccent">@color/accent_boros</item>
+    </style>
+
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ApplicationStyle" parent="android:Theme">
+        <item name="android:buttonStyle">@style/CKButton</item>
+    </style>
+
+    <style name="CKButton" parent="android:style/Widget.Button">
+        <item name="android:textSize">19sp</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@color/accent</item>
+    </style>
+
+    <style name="PlusButton">
+        <item name="android:background">@color/plusButton</item>
+        <item name="android:layout_margin">4dp</item>
+    </style>
+
+    <style name="MinusButton">
+        <item name="android:background">@color/minusButton</item>
+        <item name="android:layout_margin">4dp</item>
+    </style>
+
+    <style name="playerHeader" parent="android:TextAppearance.DeviceDefault.Large">
+        <item name="android:textAppearance">@android:style/TextAppearance.DeviceDefault.Large</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+    <style name="commanderDamagePlayerHeader" parent="android:TextAppearance.DeviceDefault.Large">
+        <item name="android:textAppearance">@android:style/TextAppearance.DeviceDefault.Large</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textColor">@color/icons</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+    <style name="commanderDamageValue" parent="android:TextAppearance.DeviceDefault.Large">
+        <item name="android:textAppearance">@android:style/TextAppearance.DeviceDefault.Large</item>
+        <item name="android:textColor">@color/commanderDamageColor</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+    <style name="standardSmallLifeDecorator" parent="android:TextAppearance.DeviceDefault.Large">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/primary_light</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="standardLargeLifeDecorator" parent="android:TextAppearance.DeviceDefault.Large">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/primary_light</item>
+        <item name="android:textSize">76sp</item>
+    </style>
+
+
+    <style name="spnTheme" parent="android:Theme">
+        <item name="android:spinnerItemStyle">@style/customSpinnerTextAppearance</item>
+    </style>
+
+    <style name="customSpinnerTextAppearance" parent="android:TextAppearance.Widget.TextView">
+        <item name="android:textColor">@color/primary_light</item>
+    </style>
+
+    <style name="customSpinnerItem" parent="android:Widget.TextView.SpinnerItem">
+        <item name="android:textAppearance">@style/customSpinnerTextAppearance</item>
+    </style>
+</resources>
