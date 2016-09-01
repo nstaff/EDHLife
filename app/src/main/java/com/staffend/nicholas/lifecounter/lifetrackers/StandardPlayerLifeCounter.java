@@ -339,11 +339,18 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
         checkDead(lifeTotal, 0);
     }
 
+    /**
+     * Resets the game to beginning of the game totals
+     */
     public void reset(){
         setLifeTotal(mStartingLife);
         setPoisonTotal(0);
     }
 
+    /**
+     * Updates the player name for this view
+     * @return the new player name
+     */
     public String updatePlayerName(){
         PlayerDataHandler handler = new PlayerDataHandler(getActivity().getBaseContext());
         String newName = handler.getPlayerName(mPlayerId);
@@ -351,6 +358,10 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
         return newName;
     }
 
+    /**
+     * called from on create to pull text colors from the ThemeManager
+     * @param tm
+     */
     public void setTextColor(ThemeManager tm){
         txvName.setTextColor(getResources().getColor(tm.getPrimaryLight()));
         txvLarge.setTextColor(getResources().getColor(tm.getPrimaryLight()));
@@ -383,11 +394,17 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
 
     }
 
+    /**
+     * Sets the focus in the view to the poison icon and value
+     */
     private void setFocusOnPoison() {
         imgLarge.setImageResource(R.mipmap.ic_poison);
         imgSmall.setImageResource(R.mipmap.ic_heart);
     }
 
+    /**
+     * Sets the focus in the life counter to the hear icon and life total
+     */
     private void setFocusOnLife() {
         imgLarge.setImageResource(R.mipmap.ic_heart);
         imgSmall.setImageResource(R.mipmap.ic_poison);
@@ -449,7 +466,7 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
+        
         void onPlayerDeath(long playerId);
 
         void onRequestNameChange(String tag, String name);

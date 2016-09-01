@@ -140,7 +140,10 @@ public class EDHPlayerFragment extends Fragment {
     }
 
 
-
+    /**
+     * Saves the state of the game in order to recall it after screen locking, app closing, etc.
+     * @param outState the bundle to save the instance information into
+     */
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -177,7 +180,10 @@ public class EDHPlayerFragment extends Fragment {
         mListener = null;
     }
 
-    //This functions creates components on each onCreateView()
+    /**
+     * Creates the components dynamically. Shoudl be called in onCreateView()
+     * @param savedInstanceState
+     */
     private void initGeneratedUIComponents(Bundle savedInstanceState){
         String lifeTag = PLAYER_LIFE_FRAG_TAG_PREFIX + mPlayerId;
         Log.v(LOG_TAG, "tagAttempt: " + lifeTag);
@@ -206,23 +212,12 @@ public class EDHPlayerFragment extends Fragment {
         }
     }
 
-    public boolean removeCommanderDamageTracker(String commanderToRemoveName){
-        if((this.getTag()).equalsIgnoreCase(commanderToRemoveName))
-        {
-            //DELETE ME!
-            return false;
-        }else{
-            //DeleteMyPeople
-            String tag = CDR_DMG_FRAG_TAG_PREFIX + commanderToRemoveName + mPlayerName;
-            //Log.v(TAG, tag);
-            FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            transaction.remove(getFragmentManager().findFragmentByTag(tag));
-            transaction.commit();
 
-            return true;
-        }
-    }
-
+    /**
+     * Removes a player from the view, and all sub views.
+     * @param commanderToRemoveId
+     * @return
+     */
     public boolean removeCommanderDamageTracker(long commanderToRemoveId){
         //DeleteMyPeople
         String tag = CDR_DMG_FRAG_TAG_PREFIX + commanderToRemoveId + mPlayerId;

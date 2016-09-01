@@ -24,11 +24,9 @@ import java.util.Random;
  * create an instance of this fragment.
  */
 public class DiceFragment extends DialogFragment implements AdapterView.OnItemSelectedListener, View.OnClickListener {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private final String OLD_ROLL_TITLE = "Previous Roll";
 
     // TODO: Rename and change types of parameters
     private String mDiceValue;
@@ -38,9 +36,11 @@ public class DiceFragment extends DialogFragment implements AdapterView.OnItemSe
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
+     * Note: This factory method exists with parameters for future use, however null values
+     * should be passed at the moment.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+     * @param param1 Parameter 1. - null not used
+     * @param param2 Parameter 2. - null not used
      * @return A new instance of fragment DiceFragment.
      */
     // TODO: Rename and change types and number of parameters
@@ -57,11 +57,15 @@ public class DiceFragment extends DialogFragment implements AdapterView.OnItemSe
         // Required empty public constructor
     }
 
+    /**
+     * OnCreate method. Standard build.
+     * Arguments not currently uses
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {// do nothing
-            //mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -93,7 +97,14 @@ public class DiceFragment extends DialogFragment implements AdapterView.OnItemSe
 
     }
 
-
+    /**
+     * EMPTY
+     * Implemented for building of an alternate view. Framework still exists here for future development
+     * @param parent
+     * @param view
+     * @param position
+     * @param id
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         //make sure its not selecting the custom feature
@@ -110,11 +121,14 @@ public class DiceFragment extends DialogFragment implements AdapterView.OnItemSe
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-        //nothing?
+        //Do nothing. Overridden to ensure that nothing is done.
     }
 
 
-    //Handle rolling of the die
+    /**
+     * Generates a die roll result for display
+     * @param v the associated view
+     */
     @Override
     public void onClick(View v) {
         Spinner spinner = (Spinner)getView().findViewById(R.id.spnNumberSides);

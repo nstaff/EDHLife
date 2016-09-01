@@ -161,7 +161,9 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    //Load the EDH setup menu.
+    /**
+     * Loads the EDH Game mode setup menu
+     */
     private void setupEDH(){
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainer, EDHGameSetup.newInstance(null, null));
@@ -169,7 +171,9 @@ public class MainActivity extends AppCompatActivity
         this.mState = GameState.EDH;
     }
 
-    //load the initial splash screen
+    /**
+     * Loads the initial splash screen
+     */
     private void initSplashScreen() {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainer, WelcomeFragment.newInstance(null, null), ACTIVE_FRAG_TAG);

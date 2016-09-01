@@ -1,6 +1,7 @@
 package com.staffend.nicholas.lifecounter.lifetrackers;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
@@ -107,7 +108,11 @@ public class EDHPlayerCommanderDamageCounter extends Fragment implements View.On
     }
 
 
-
+    /**
+     * Verifies that the activity implements the appropriate listener
+     * @param activity the context of this app
+     * @deprecated
+     */
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -119,12 +124,33 @@ public class EDHPlayerCommanderDamageCounter extends Fragment implements View.On
         }
     }
 
+    /**
+     * Verifies that the activity implements the appropriate listener
+     * @param context the context of this app
+     */
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            mListener = (OnFragmentInteractionListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+                    + " must implement OnEDHGameStartListener");
+        }
+    }
+
+
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
     }
 
+    /**
+     * On click method for handling life changes. Passes listener information to the Activity
+     * in order to allow it to handle the game state.
+     * @param v
+     */
     @Override
     public void onClick(View v) {
 
@@ -148,6 +174,7 @@ public class EDHPlayerCommanderDamageCounter extends Fragment implements View.On
         }
 
     }
+
 
     public int getCommanderDamageTotal(){
         return Util.changeNumericTextViewValue(0, txvCommanderDamage);
