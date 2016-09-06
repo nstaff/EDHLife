@@ -103,6 +103,9 @@ ChangeNameDialogFragment.OnFragmentInteractionListener{
     }
 
 
+    /**
+     * Starts a new game
+     */
     private void newGame(){
         mPlayers = mPlayerHandler.getXPlayers(mNumPlayers);
         long[] playerIds = Util.getIdArrayFromPlayersList(mPlayers);
@@ -127,7 +130,11 @@ ChangeNameDialogFragment.OnFragmentInteractionListener{
         }
     }
 
-    //TODO:Refactor to this new method
+    /**
+     * Add a player to the game
+     * @param player
+     * @param playerIdsArray
+     */
     public void addPlayer(Player player, long[] playerIdsArray){
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.add(R.id.lifeCounterContainer,
@@ -138,17 +145,30 @@ ChangeNameDialogFragment.OnFragmentInteractionListener{
 
     }
 
+    /**
+     * Get the tag of an EDHPlayerFragment
+     * @param id
+     * @return
+     */
     @NonNull
     private String getEDHPlayerFragmentTag(long id) {
         return EDH_FRAG_TAG_PREFIX + id;
     }
 
+    /**
+     * SErialize game state
+     * @param outState
+     */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putStringArrayList(PLAYER_NAMES_TAG, mAllPlayers);
     }
 
+    /**
+     * Callback for fragment interaction. Void to override complications
+     * @param uri
+     */
     @Override
     public void onFragmentInteraction(Uri uri) {
 
@@ -169,7 +189,9 @@ ChangeNameDialogFragment.OnFragmentInteractionListener{
         }
     }
 
-    //Implementation of interface for a player dying. Delegates removal of that player from the view
+    /**
+     * Implementation of interface for a player dying. Delegates removal of that player from the view
+     */
     @Override
     public void onPlayerDeath(long playerId) {
         if(isAutoDeleteOn){
@@ -177,6 +199,11 @@ ChangeNameDialogFragment.OnFragmentInteractionListener{
         }
     }
 
+    /**
+     * Callback to request name change. Calls DialogFragment to change player name
+     * @param tag
+     * @param name
+     */
     @Override
     public void onRequestNameChange(String tag, String name) {
         getFragmentManager().beginTransaction()
@@ -184,16 +211,31 @@ ChangeNameDialogFragment.OnFragmentInteractionListener{
                 .commit();
     }
 
+    /**
+     * Loads the theme for the app
+     * @return
+     */
     @Override
     public ThemeManager onCreateUpdateText() {
         return mThemeManager;
     }
 
+    /**
+     * Change the name of the dialog
+     * @param tag  the ID of the item to be changed. This object only operates as a carrier of this
+     *            information
+     * @param newName the name to set the life change object to.
+     */
     @Override
     public void onNameChangeDialogConfirmed(String tag, String newName) {
         changeName(tag, newName);
     }
 
+    /**
+     * Change the name at the top level of this view
+     * @param tag
+     * @param newName
+     */
     private void changeName(String tag, String newName){
         //get the player life counter to change the main name of
         StandardPlayerLifeCounter counter = (StandardPlayerLifeCounter) getFragmentManager()
@@ -222,8 +264,10 @@ ChangeNameDialogFragment.OnFragmentInteractionListener{
     }
 
 
-
-
+    /**
+     * CAll down view tree to remove commander damage life counters
+     * @param commanderId
+     */
     public void deleteCommanderDamageCounters(long commanderId){
         for (Player p:
                 mPlayers) {
@@ -237,7 +281,9 @@ ChangeNameDialogFragment.OnFragmentInteractionListener{
         }
     }
 
-    //Drops a player from the view based on the players name (which is the fragment tag)
+    /**
+     * Drops a player from the view based on the players name (which is the fragment tag)
+     */
     public void dropFromPlayers(long playerId, boolean suppressRequest){
         mPlayers.remove(mPlayerHandler.getPlayerById(playerId));
         Fragment f = getFragmentManager().findFragmentByTag(getEDHPlayerFragmentTag(playerId));
@@ -273,6 +319,10 @@ ChangeNameDialogFragment.OnFragmentInteractionListener{
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * restart the game state to default valuse
+     * @param playerName
+     */
     private void requestRestartGame(String playerName){
         String message;
         if(playerName != null){
@@ -300,6 +350,9 @@ ChangeNameDialogFragment.OnFragmentInteractionListener{
 
     }
 
+    /**
+     * Clear the old game state.
+     */
     private void clearOldGame() {
         long[] playersToDrop = Util.getIdArrayFromPlayersList(mPlayers);
         for(int i=0; i<playersToDrop.length; i++){

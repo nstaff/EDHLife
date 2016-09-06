@@ -48,15 +48,14 @@ public class EDHPlayerFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
+     *
+     * @deprecated
      *
      * @param playerName this player's name.
      * @param startingLife the starting life total.
      * @param allPlayers an array of all the player names
      * @return A new instance of fragment EDHPlayerFragment.
      */
-    // TODO: DELETE ME!
     public static EDHPlayerFragment newInstance(String playerName, String startingLife, String[] allPlayers) {
         EDHPlayerFragment fragment = new EDHPlayerFragment();
         Bundle args = new Bundle();
@@ -66,7 +65,16 @@ public class EDHPlayerFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-    // TODO: DELETE ME!
+
+    /**
+     * @deprecated
+     *
+     * @param playerName
+     * @param startingLife
+     * @param maxPoison
+     * @param allPlayers
+     * @return
+     */
     public static EDHPlayerFragment newInstance(String playerName, String startingLife, int maxPoison, String[] allPlayers) {
         EDHPlayerFragment fragment = new EDHPlayerFragment();
         Bundle args = new Bundle();
@@ -78,7 +86,16 @@ public class EDHPlayerFragment extends Fragment {
         return fragment;
     }
 
-    //TODO: Refactor to this constructor
+    /**
+     * Main constructor for newInstance of a EDHPlayerFragment
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     * @param player - the player name
+     * @param startingLife - their starting life total
+     * @param maxPoison - maximum poison before death
+     * @param allPlayers - array of all players in the game. This is to build the commander life counters
+     * @return EDHPlayerFragment
+     */
     public static EDHPlayerFragment newInstance(Player player, String startingLife, int maxPoison, long[] allPlayers) {
         EDHPlayerFragment fragment = new EDHPlayerFragment();
         Bundle args = new Bundle();
@@ -95,6 +112,10 @@ public class EDHPlayerFragment extends Fragment {
         // Required empty public constructor
     }
 
+    /**
+     * Inidialize views and get default values from bundle
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,6 +129,13 @@ public class EDHPlayerFragment extends Fragment {
         }
     }
 
+    /**
+     * Inflate the view and set values of the view
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -130,15 +158,6 @@ public class EDHPlayerFragment extends Fragment {
 
         return v;
     }
-
-
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.v(LOG_TAG, "onDestroy()");
-    }
-
 
     /**
      * Saves the state of the game in order to recall it after screen locking, app closing, etc.
@@ -163,6 +182,11 @@ public class EDHPlayerFragment extends Fragment {
         outState.putLongArray(ALL_PLAYER_IDS, mAllPlayers);
     }
 
+    /**
+     * @deprecated
+     * Ensures that the attached activity implements the appropriate interface to utilize this FRagment
+     * @param activity
+     */
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -230,6 +254,10 @@ public class EDHPlayerFragment extends Fragment {
 
     }
 
+    /**
+     * Update the player list. Purpose is to be used after a player dies in the game.
+     * @param newPlayersArray
+     */
     public void updatePlayersList(long[] newPlayersArray){
         this.mAllPlayers = newPlayersArray;
     }

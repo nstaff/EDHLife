@@ -128,6 +128,12 @@ public class GoldfishActivity extends AppCompatActivity implements
         getMenuInflater().inflate(R.menu.standard, menu);
         return true;
     }
+
+    /**
+     * Handle menu option selection
+     * @param item
+     * @return
+     */
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long

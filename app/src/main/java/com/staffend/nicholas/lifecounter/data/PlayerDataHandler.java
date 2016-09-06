@@ -26,14 +26,26 @@ public class PlayerDataHandler {
         dbHelper = new DataHelper(context);
     }
 
+    /**
+     * Open a copy of this database for writing
+     * @throws SQLException
+     */
     public void open() throws SQLException{
         database = dbHelper.getWritableDatabase();
     }
 
+    /**
+     * Close the database connection
+     */
     public void close(){
         dbHelper.close();
     }
 
+    /**
+     * Update the player name by id number and new name
+     * @param id
+     * @param name
+     */
     public void updatePlayerName(String id, String name){
         String sql = "UPDATE players SET player = '"
                 + name + "' WHERE _id = " + id +";";
@@ -47,6 +59,10 @@ public class PlayerDataHandler {
 
     }
 
+    /**
+     * Get all players in the database.
+     * @return
+     */
     public ArrayList<Player> getAllPlayers(){
         Cursor cursor = dbHelper.getReadableDatabase()
                 .rawQuery("SELECT * FROM players;", null);
@@ -62,6 +78,11 @@ public class PlayerDataHandler {
         return players;
     }
 
+    /**
+     * Helper method to build player object from a database row
+     * @param cursor
+     * @return
+     */
     private Player cursorToPlayer(Cursor cursor){
         Player player = new Player();
         player.setId(cursor.getLong(0));
@@ -69,6 +90,11 @@ public class PlayerDataHandler {
         return player;
     }
 
+    /**
+     * get the player name from the player ID number
+     * @param playerId
+     * @return
+     */
     public String getPlayerName(long playerId){
         Cursor cursor = dbHelper.getReadableDatabase()
                 .rawQuery("SELECT * FROM players where _id="+playerId+";", null);

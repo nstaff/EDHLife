@@ -15,6 +15,10 @@ public class ThemeManager {
     private int theme;
 
 
+    /**
+     * Loads the theme from shared preferences for use by the app.
+     * @param c
+     */
     public ThemeManager(Context c) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(c);
         String guild = sp.getString("prefColorScheme", "Default");
@@ -65,14 +69,26 @@ public class ThemeManager {
         }
     }
 
+    /**
+     * Gets the currently set theme
+     * @return
+     */
     public int getTheme() {
         return this.theme;
     }
 
+    /**
+     * Get the current background drawable resource for app
+     * @return
+     */
     public int getDrawableBackground() {
         return this.drawable_background;
     }
 
+    /**
+     * Get the primary light color for the app
+     * @return
+     */
     public int getPrimaryLight(){
         return this.lightColor;
     }

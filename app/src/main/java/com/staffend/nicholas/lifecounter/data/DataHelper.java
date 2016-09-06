@@ -32,7 +32,7 @@ public class DataHelper extends SQLiteOpenHelper {
 
 
 
-    //Database creation sql statment
+    //Database creation sql statments
     private static final String DATABASE_CREATE = "create table "
             + TABLE_PLAYERS + "(" + COLUMN_ID
             + " integer primary key autoincrement, " + COLUMN_PLAYER
@@ -51,6 +51,10 @@ public class DataHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    /**
+     * Build and execute SQL db commands
+     * @param db
+     */
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(DATABASE_CREATE);
@@ -76,6 +80,14 @@ public class DataHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO " + TABLE_EDH_SETTINGS + " ("+COLUMN_ID+", "+COLUMN_EDH_SETTINGS+") VALUES ("+ID_NUM_PLAYERS+",2);");
     }
 
+    /**
+     * Clear the previous tables and recreate.
+     * Because the data to be lost is minimal, a clean build is executed on upgrade to a new
+     * version.
+     * @param db
+     * @param oldVersion
+     * @param newVersion
+     */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         Log.w(DataHelper.class.getName(),

@@ -23,12 +23,10 @@ import com.staffend.nicholas.lifecounter.util.GameState;
  * create an instance of this fragment.
  */
 public class GameLauncherFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String GAME_STATE = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private GameState mGameState;
     private String mParam2;
 
@@ -81,7 +79,9 @@ public class GameLauncherFragment extends Fragment {
         return v;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
+    /**
+     * Call on game start from activity
+     */
     public void onButtonPressed() {
         if (mListener != null) {
             mListener.onGameStart();

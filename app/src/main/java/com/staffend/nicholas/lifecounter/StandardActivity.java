@@ -19,6 +19,9 @@ import com.staffend.nicholas.lifecounter.controllers.ThemeManager;
 
 import java.util.ArrayList;
 
+/**
+ * A standard game instance activity
+ */
 public class StandardActivity extends AppCompatActivity
         implements StandardPlayerLifeCounter.OnFragmentInteractionListener,
 ChangeNameDialogFragment.OnFragmentInteractionListener{

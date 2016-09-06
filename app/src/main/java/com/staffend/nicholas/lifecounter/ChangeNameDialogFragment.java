@@ -64,6 +64,10 @@ public class ChangeNameDialogFragment extends DialogFragment implements View.OnC
         return fragment;
     }
 
+    /**
+     * get values from saged instance state
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +77,13 @@ public class ChangeNameDialogFragment extends DialogFragment implements View.OnC
         }
     }
 
+    /**
+     * Build the view of this Fragment
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -109,6 +120,10 @@ public class ChangeNameDialogFragment extends DialogFragment implements View.OnC
     }
 
 
+    /**
+     * Ensure that attaching Activity implements the listener
+     * @param context
+     */
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -120,6 +135,10 @@ public class ChangeNameDialogFragment extends DialogFragment implements View.OnC
         }
     }
 
+    /**
+     * Ensure that attaching Activity implements the listener
+     * @param context
+     */
     @Override
     public void onAttach(Activity context) {
         super.onAttach(context);
@@ -137,7 +156,10 @@ public class ChangeNameDialogFragment extends DialogFragment implements View.OnC
         mListener = null;
     }
 
-    //handle OK click.
+    /**
+     * HAndle ok click, calls back to datalayer and view to change the player name
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         //get ID of caller

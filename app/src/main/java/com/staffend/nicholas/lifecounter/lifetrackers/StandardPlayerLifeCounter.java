@@ -115,6 +115,16 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
         return fragment;
     }
 
+    /**
+     * Preferred creation method for the LifeCounter. Auto generates playername from database ID.
+     * sets starting poison to 0.
+     * @param startingLife
+     * @param maxPoison
+     * @param playerName
+     * @param playerId
+     * @param tag
+     * @return
+     */
     public static StandardPlayerLifeCounter newInstance(int startingLife, int maxPoison, String playerName, long playerId, String tag) {
         StandardPlayerLifeCounter fragment = new StandardPlayerLifeCounter();
         fragment.setTags(String.valueOf(playerId));
@@ -134,6 +144,11 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
         //required empty constructor
     }
 
+    /**
+     * Set the tags for this object for access by callbacks. Concatenate the id num to the end of
+     * the tag.
+     * @param mID
+     */
     private static void setTags(String mID){
         STARTING_LIFE = BASE_STARTING_LIFE + mID;
         PLAYER_NAME = BASE_PLAYER_NAME + mID;
@@ -143,6 +158,10 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
         PLAYER_ID = BASE_PLAYER_ID + mID;
     }
 
+    /**
+     * Create the object. Initialize values for the use in inflating views
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -166,6 +185,13 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
         }
     }
 
+    /**
+     * Create the view
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -196,6 +222,9 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
         return v;
     }
 
+    /**
+     * Set the theme of the view based on preferences
+     */
     @Override
     public void onStart() {
         super.onStart();
@@ -205,7 +234,10 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
         }
     }
 
-
+    /**
+     * Serialize the game state for recall later
+     * @param outState
+     */
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -219,6 +251,10 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
         outState.putBoolean(IS_LIFE_VISIBLE, isLifeVisible);
     }
 
+    /**
+     * Deserialize the game state
+     * @param savedInstanceState
+     */
     @Override
     public void onViewStateRestored(Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
@@ -247,6 +283,10 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
             }
     }
 
+    /**
+     * Build the animation for swapping images
+     * @param v
+     */
     private void initAnimation(View v) {
         imgLarge.setFactory(this);
         imgSmall.setFactory(this);
@@ -257,15 +297,27 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
         imgSmall.setInAnimation(in);
     }
 
+    /**
+     * @deprecated
+     * @return
+     */
     public String getPlayerName(){
         return txvName.getText().toString();
     }
 
+    /**
+     * Set the player name for this view
+     * @param newPlayerName
+     */
     public void setPlayerName(String newPlayerName){
         this.mPlayerName = newPlayerName;
         this.txvName.setText(newPlayerName);
     }
 
+    /**
+     * Get the currently displayed life total of this view
+     * @return
+     */
     public int getLifeTotal(){
         if(isLifeVisible){
             return Util.changeNumericTextViewValue(0, txvLarge);
@@ -274,6 +326,10 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
             return Util.changeNumericTextViewValue(0, txvSmall);
     }
 
+    /**
+     * Set the currently displayed life total of this view
+     * @param newLifeTotal
+     */
     public void setLifeTotal(int newLifeTotal){
         if(isLifeVisible){
             txvLarge.setText(String.valueOf(newLifeTotal));
@@ -287,6 +343,10 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
         Log.v(LOG_TAG, "onDestroy()" +mPlayerName);
     }
 
+    /**
+     * Get the current value of poison counters for this player
+     * @return
+     */
     public int getPoisonTotal(){
         if(isLifeVisible){
             return Util.changeNumericTextViewValue(0, txvSmall);
@@ -295,6 +355,10 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
             return Util.changeNumericTextViewValue(0, txvLarge);
     }
 
+    /**
+     * Set the current poison counter value
+     * @param newPoisonTotal
+     */
     public void setPoisonTotal(int newPoisonTotal){
         if(!isLifeVisible){
             txvLarge.setText(String.valueOf(newPoisonTotal));
@@ -302,7 +366,10 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
             txvSmall.setText(String.valueOf(newPoisonTotal));
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
+    /**
+     * Handle pressing of the life increment/decrememnt buttons.
+     * @param change
+     */
     private void onLifeFabPressed(int change) {
         int lifeTotal = Util.changeNumericTextViewValue(change, txvLarge);
         if(isLifeVisible){
@@ -449,6 +516,10 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
         }
     }
 
+    /**
+     * Makes the image view for the animation
+     * @return
+     */
     @Override
     public View makeView() {
         ImageView view = new ImageView(getActivity().getApplicationContext());
@@ -466,7 +537,7 @@ public class StandardPlayerLifeCounter extends Fragment implements View.OnClickL
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        
+
         void onPlayerDeath(long playerId);
 
         void onRequestNameChange(String tag, String name);

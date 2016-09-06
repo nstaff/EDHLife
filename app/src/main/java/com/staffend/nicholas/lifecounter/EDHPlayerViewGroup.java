@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import com.staffend.nicholas.lifecounter.R;
 
 /**
+ * Layout class for player views
  * Created by Nicholas on 12/17/2015.
  */
 public class EDHPlayerViewGroup extends LinearLayout {

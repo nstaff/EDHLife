@@ -69,6 +69,13 @@ public class DiceFragment extends DialogFragment implements AdapterView.OnItemSe
         }
     }
 
+    /**
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -119,9 +126,13 @@ public class DiceFragment extends DialogFragment implements AdapterView.OnItemSe
 
     }
 
+    /**
+     * Do nothing. Overridden to ensure that nothing is done.
+     * @param parent
+     */
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-        //Do nothing. Overridden to ensure that nothing is done.
+        //
     }
 
 

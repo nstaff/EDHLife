@@ -36,7 +36,6 @@ public class EDHPlayerCommanderDamageCounter extends Fragment implements View.On
     // TODO: Rename and change types of parameters
     private String commanderName;
     private String startingDamage;
-    private long parentCommander;
     private long mParentCommanderId;
     private TextView txvCommanderName, txvCommanderDamage;
     private ImageView btnIncrement, btnDecrement;
@@ -54,6 +53,13 @@ public class EDHPlayerCommanderDamageCounter extends Fragment implements View.On
     // TODO: Rename and change types and number of parameters
 
 
+    /**
+     * Factory method to create a new instance of EDHPlayerCommanderDamageCounter
+     * @param commanderId
+     * @param startingDamage
+     * @param parentCommanderID
+     * @return
+     */
     public static EDHPlayerCommanderDamageCounter newInstance(long commanderId, String startingDamage, long parentCommanderID) {
         EDHPlayerCommanderDamageCounter fragment = new EDHPlayerCommanderDamageCounter();
         Bundle args = new Bundle();
@@ -68,6 +74,10 @@ public class EDHPlayerCommanderDamageCounter extends Fragment implements View.On
         // Required empty public constructor
     }
 
+    /**
+     * Called prior to onCreateView. Initializes values fo ruse in later methods
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +90,13 @@ public class EDHPlayerCommanderDamageCounter extends Fragment implements View.On
         }
     }
 
+    /**
+     * Main create view method. Initialize all views for manipulation
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -175,15 +192,27 @@ public class EDHPlayerCommanderDamageCounter extends Fragment implements View.On
 
     }
 
-
+    /**
+     * gets the current commander damage text view total
+     * @return
+     */
     public int getCommanderDamageTotal(){
         return Util.changeNumericTextViewValue(0, txvCommanderDamage);
     }
 
+    /**
+     * Change the name of this commander life counter
+     * @param newName
+     */
     public void setCommanderName(String newName){
         txvCommanderName.setText(newName);
     }
 
+    /**
+     * Check if the current player is dead
+     * @param value
+     * @return true if dead
+     */
     private boolean isDead(int value){
         if (value > 20){
             Log.v("EDHDmgCtr", String.valueOf(mParentCommanderId));
@@ -210,6 +239,10 @@ public class EDHPlayerCommanderDamageCounter extends Fragment implements View.On
         void onLifeChange(int change, long parentCommanderId);
     }
 
+    /**
+     * Serialize instance state
+     * @param outState
+     */
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);

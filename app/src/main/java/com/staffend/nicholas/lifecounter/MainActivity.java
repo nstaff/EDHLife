@@ -35,6 +35,10 @@ public class MainActivity extends AppCompatActivity
     private ArrayList<String> playerNames = new ArrayList<>();
 
 
+    /**
+     * Main create view. Load navigation items and menus. Load default menu if no game state exists.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,12 +80,19 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    /**
+     * Load the game instance state
+     * @param savedInstanceState
+     */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         mState = (GameState) savedInstanceState.getSerializable(STATE_TAG);
     }
 
+    /**
+     * Make sure that back pressed closes drawer if open, instead of popping back stack
+     */
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -99,20 +110,16 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.v(TAG, "onDestroy()");
-    }
 
+    /**Handle action bar menu item selection
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.dice_roller) {
             DiceFragment.newInstance(null, null).show(getSupportFragmentManager(), null);
             return true;
@@ -121,13 +128,22 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Serialize instance state
+     * @param outState
+     */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putSerializable(STATE_TAG, mState);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
+
+    /**
+     * Control navigation from the menu
+     * @param item - the menu item selected
+     * @return
+     */
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.

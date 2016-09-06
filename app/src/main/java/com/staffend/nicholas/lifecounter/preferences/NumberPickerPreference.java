@@ -13,6 +13,8 @@ import android.widget.NumberPicker;
 import com.staffend.nicholas.lifecounter.R;
 
 /**
+ * Class to tie a Dialog pop up of number picker to a sharedPreference object.
+ * Not used in current implementation.
  * Created by Nicholas on 11/30/2015.
  */
 public class NumberPickerPreference extends DialogPreference {
